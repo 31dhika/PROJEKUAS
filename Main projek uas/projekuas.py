@@ -14,8 +14,6 @@ x.add_row(["2","Kaos lengan pendek","M-XL","Rp.75K"])
 x.add_row(["3","Kaos lengan panjang","M-XL","Rp.80K"])
 x.add_row(["4","Celana jeans","39-41","Rp.150k"])
 
-print(x)
-
 #variabel list
 kode = []
 ukuran = []
@@ -25,6 +23,8 @@ jmlhpotong = []
 jmlhharga = []
 
 banyakjenis = int(input("Banyak jenis : "))#untuk menentukan berapa banyak perulangan
+
+print(x)
 
 #input dan logika if
 class mulai :
