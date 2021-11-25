@@ -35,7 +35,7 @@ def proses() :
         kode.append(int(input("\tSilahkan masukan pilihan anda dengan angka [1-4] : ")))
         ukuran.append(input("\tSilahkan pilih ukurannya\t : "))
         jmlhpotong.append(int(input("\tBerapa potong yang ingin di beli : ")))
-        if kode[i] == "1" :
+        if kode[i] == 1 :
             merk.append("Kemeja")
             if ukuran == "m" or ukuran == "M" :
                 harga.append(100000)
