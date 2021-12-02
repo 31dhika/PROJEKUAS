@@ -4,6 +4,9 @@ saat_ini = datetime.now()
 tgl_jam = saat_ini.strftime("%d-%m-%Y %H:%M:%S") # format dd/mm/YY H:M:S 
 
 #mengakses modul
+import pandas as pd
+
+#mengakses modul
 from prettytable import PrettyTable
 x = PrettyTable()
 
@@ -24,9 +27,9 @@ harga = []
 jmlhpotong = []
 jmlhharga = []
 
-banyakjenis = int(input("Banyak jenis : "))#untuk menentukan berapa banyak perulangan
+banyakjenis = int(input("Masukan banyak jenis pembelian : "))#untuk menentukan berapa banyak perulangan
 
-#input dan logika if
+# perulangan,input dan logika if
 class mulai :
     def proses() :
         global jmlhpotong
@@ -39,42 +42,44 @@ class mulai :
             jmlhpotong.append(int(input("\tBerapa potong yang ingin di beli : ")))
             if kode[i] == 1 :
                 merk.append("Kemeja")
-                if ukuran == "m" or ukuran == "M" :
+                if ukuran[i] == "m" or ukuran[i] == "M" :
                     harga.append(100000)
-                elif ukuran == "l" or ukuran == "L" :
+                elif ukuran[i] == "l" or ukuran[i] == "L" :
+                    harga.append(100000)
+                elif ukuran[i] == "xl" or ukuran[i] == "XL" :
                     harga.append(100000)
                 else :
-                    ukuran == "xl" or ukuran == "Xl" 
-                    harga.append(100000)
+                    print("Ukuran tidak tersedia")
+                    harga.append(0)
             elif kode[i] == 2 :
                 merk.append("Kaos lengan pendek")
-                if ukuran == "m" or ukuran == "M" :
+                if ukuran[i] == "m" or ukuran[i] == "M" :
                     harga.append(75000)
-                elif ukuran == "l" or ukuran == "L" :
+                elif ukuran[i] == "l" or ukuran[i] == "L" :
                     harga.append(75000)
-                elif ukuran == "xl" or ukuran == "Xl" :
+                elif ukuran[i] == "xl" or ukuran[i] == "XL" :
                     harga.append(75000)
                 else :
                     print("Ukuran tidak tersedia")
                     harga.append(0)
             elif kode[i] == 3 :
                 merk.append("Kaos lengan panjang")
-                if ukuran == "m" or ukuran == "M" :
+                if ukuran[i] == "m" or ukuran[i] == "M" :
                     harga.append(80000)
-                elif ukuran == "l" or ukuran == "L" :
+                elif ukuran[i] == "l" or ukuran[i] == "L" :
                     harga.append(80000) 
-                elif ukuran == "xl" or ukuran == "Xl" :
+                elif ukuran[i] == "xl" or ukuran[i] == "XL" :
                     harga.append(80000)
                 else :
                     print("Ukuran tidak tersedia")
                     harga.append(0)
             elif kode[i] == 4 :
                 merk.append("Celana Jeans")
-                if ukuran == "39" :
+                if ukuran[i] == "39" :
                     harga.append(150000)
-                elif ukuran == "40" :
+                elif ukuran[i] == "40" :
                     harga.append(150000)
-                elif ukuran == "41" :
+                elif ukuran[i] == "41" :
                     harga.append(150000)
                 else :
                     print("Ukuran tidak tersedia")
@@ -84,59 +89,60 @@ class mulai :
                 harga.append(0)
     proses()
 
+    # proses perhitungan
     def hitung() :
         global ubay
         global uangkembali
+        global jumbay
         jumbay = 0
         for i in range(banyakjenis) :
             jmlhharga.append(harga[i]*jmlhpotong[i])
             jumbay = jumbay+jmlhharga[i]
-        print("Total\t\t   :",jumbay)
-        ubay = int(input("Masukan uang bayar : "))
+        print("")
+        print("Proses Perhitungan...")
+        print("Total\t\t   : Rp.","{:,}".format(jumbay))
+        ubay = int(input("Masukan uang bayar : Rp. "))
         if ubay > jumbay :
-            print("Kembalian\t   :",ubay-jumbay)
+            print("Kembalian\t   : Rp.","{:,}".format(ubay-jumbay))
         elif ubay == jumbay :
-            print("Uang pas ")
+            print("Kembalian\t   : Rp. 0")
         else :
-            print("Kurang\t\t   :",ubay-jumbay)
-        print("----------------------------------------------")
+            print("Kurang\t\t   : Rp.","{:,}".format(ubay-jumbay))
+        print("")
     hitung()
 
 
-""""
-#jika ingin pesan lagi
-def tanya() :
-    tanya = input("Ingin pesan lagi (y/t) ? : ")
-    if tanya == "y" :
-        proses()
-        hitung()
-    elif tanya == "t" :
-        struk()
-    else :
-        print("Masukan input yang benar")
-    return
-tanya()
-"""
 
-#output
-"""
-def struk() :
-    print("\t\tJ-Da\'an clothes")
-    print("\tJl. Raya Halim kusuma no. 18")
-    print("\t\tTelp/wa 0899999")
-    print("----------------------------------------------")
-    print("\t     ",tgl_jam)
-    print("----------------------------------------------")
-    print("     ")
-    for i in range(banyakjenis) :
-        print("%s " % (i+1, merk[i]))
-    print("----------------------------------------------")
-    print("\t\t\tTotal   : ",harga)
-    print("\t\t\tBayar   : ",ubay)
-    print("\t\t\tKembali : ",)
-    print("----------------------------------------------")
-    print("\t\tTERIMAKASIH")
-    print("\t   SELAMAT BELANJA KEMBALI")
-
-struk()
-"""
+    #output
+    def struk() :
+        print("Proses mencetak struk...")
+        print("-----------------------------------------------")
+        print("\t\tJ-Da\'an clothes")
+        print("\t Jl. Raya Halim kusuma no. 18")
+        print("\t     Telp/wa 085877624931")
+        print("-----------------------------------------------")
+        print("\t     ",tgl_jam)
+        print("-----------------------------------------------")
+        tblStruk = ({
+        "Merk": merk,
+        "Ukuran": ukuran,
+        "Qty": jmlhpotong,
+        "Harga": harga,
+        "Total": jmlhharga,
+        })
+        strukPandas = pd.DataFrame(tblStruk,index=[""])
+        print(strukPandas)
+        print("") 
+        print("-----------------------------------------------")
+        print("\t\t\tTotal\t  : Rp.","{:,}".format(jumbay))
+        print("\t\t\tBayar\t  : Rp.","{:,}".format(ubay))
+        if ubay > jumbay :
+            print("\t\t\tKembalian : Rp.","{:,}".format(ubay-jumbay))
+        elif ubay == jumbay :
+            print("\t\t\tKembalian : Rp. 0")
+        else :
+            print("\t\t\tKurang    : Rp.","{:,}".format(ubay-jumbay))
+        print("-----------------------------------------------")
+        print("\t\tTERIMAKASIH")
+        print("\t   SELAMAT BELANJA KEMBALI")
+    struk()
