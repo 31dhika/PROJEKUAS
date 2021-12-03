@@ -130,7 +130,7 @@ class mulai :
         "Harga": harga,
         "Total": jmlhharga,
         })
-        strukPandas = pd.DataFrame(tblStruk,index=[""])
+        strukPandas = pd.DataFrame(tblStruk)
         print(strukPandas)
         print("") 
         print("-----------------------------------------------")
