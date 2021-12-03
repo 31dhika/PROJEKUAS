@@ -116,13 +116,13 @@ class mulai :
     #output
     def struk() :
         print("Proses mencetak struk...")
-        print("-----------------------------------------------")
+        print("--------------------------------------------------")
         print("\t\tJ-Da\'an clothes")
         print("\t Jl. Raya Halim kusuma no. 18")
         print("\t     Telp/wa 085877624931")
-        print("-----------------------------------------------")
+        print("--------------------------------------------------")
         print("\t     ",tgl_jam)
-        print("-----------------------------------------------")
+        print("--------------------------------------------------")
         tblStruk = ({
         "Merk": merk,
         "Ukuran": ukuran,
@@ -133,7 +133,7 @@ class mulai :
         strukPandas = pd.DataFrame(tblStruk)
         print(strukPandas)
         print("") 
-        print("-----------------------------------------------")
+        print("--------------------------------------------------")
         print("\t\t\tTotal\t  : Rp.","{:,}".format(jumbay))
         print("\t\t\tBayar\t  : Rp.","{:,}".format(ubay))
         if ubay > jumbay :
@@ -142,7 +142,7 @@ class mulai :
             print("\t\t\tKembalian : Rp. 0")
         else :
             print("\t\t\tKurang    : Rp.","{:,}".format(ubay-jumbay))
-        print("-----------------------------------------------")
+        print("--------------------------------------------------")
         print("\t\tTERIMAKASIH")
         print("\t   SELAMAT BELANJA KEMBALI")
     struk()
