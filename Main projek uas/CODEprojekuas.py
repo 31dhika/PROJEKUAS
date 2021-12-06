@@ -111,7 +111,6 @@ class mulai :
     hitung()
 
 
-
     #output
     def struk() :
         print("Proses mencetak struk...")
