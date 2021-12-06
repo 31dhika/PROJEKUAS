@@ -110,7 +110,6 @@ class mulai :
         print("")
     hitung()
 
-
     #output
     def struk() :
         print("Proses mencetak struk...")
