@@ -85,8 +85,8 @@ class mulai :
                     print("Ukuran tidak tersedia")
                     harga.append(0)
             else :
-                print("Kode yang anda masukan salah !")
-                harga.append(0)
+                print("eror karena salah input")
+                exit()
     proses()
 
     # proses perhitungan
