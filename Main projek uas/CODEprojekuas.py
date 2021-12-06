@@ -1,16 +1,16 @@
-#mengakses modul
+# mengakses modul
 from datetime import datetime
 saat_ini = datetime.now()
 tgl_jam = saat_ini.strftime("%d-%m-%Y %H:%M:%S") # format dd/mm/YY H:M:S 
 
-#mengakses modul
+# mengakses modul
 import pandas as pd
 
-#mengakses modul
+# mengakses modul
 from prettytable import PrettyTable
 x = PrettyTable()
 
-#tabel untuk menu
+# tabel untuk menu
 x.field_names = ("NO","PAKAIAN","UKURAN","HARGA")
 x.add_row(["1","Kemeja","M-XL","Rp.100K"])
 x.add_row(["2","Kaos lengan pendek","M-XL","Rp.75K"])
@@ -19,7 +19,7 @@ x.add_row(["4","Celana jeans","39-41","Rp.150k"])
 
 print(x)
 
-#variabel list
+# variabel list
 kode = []
 ukuran = []
 merk = []
@@ -27,7 +27,7 @@ harga = []
 jmlhpotong = []
 jmlhharga = []
 
-banyakjenis = int(input("Masukan banyak jenis pembelian : "))#untuk menentukan berapa banyak perulangan
+banyakjenis = int(input("Masukan banyak jenis pembelian : "))# untuk menentukan berapa banyak perulangan
 
 # perulangan,input dan logika if
 class mulai :
@@ -110,7 +110,7 @@ class mulai :
         print("")
     hitung()
 
-    #output
+    # output
     def struk() :
         print("Proses mencetak struk...")
         print("--------------------------------------------------")
