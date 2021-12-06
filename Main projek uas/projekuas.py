@@ -92,7 +92,6 @@ class mulai :
     # proses perhitungan
     def hitung() :
         global ubay
-        global uangkembali
         global jumbay
         jumbay = 0
         for i in range(banyakjenis) :
@@ -123,13 +122,13 @@ class mulai :
         print("--------------------------------------------------")
         print("\t     ",tgl_jam)
         print("--------------------------------------------------")
-        tblStruk = ({
+        tblStruk = {
         "Merk": merk,
         "Ukuran": ukuran,
         "Qty": jmlhpotong,
         "Harga": harga,
         "Total": jmlhharga,
-        })
+        }
         strukPandas = pd.DataFrame(tblStruk)
         print(strukPandas)
         print("") 
